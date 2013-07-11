@@ -1,0 +1,54 @@
+<%= form_for @user , :html => {:multipart => true}, :class => 'form-horizontal' do |f| %>
+
+  <% unless f.object.errors.empty? %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" class="alert alert-error">
+          <h3><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</h3>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+  <% end %>
+      
+  <div>
+    <div class='control-group'>
+      <%= f.label :first_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+    </div>
+    <div class='control-group'>
+      <%= f.label :last_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+    </div>
+    <div class='control-group'>
+      <%= f.label :email, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email, placeholder: "Email Address" %>
+      </div>
+    </div>
+    <div class='control-group'>
+      <%= f.label :teaser, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :teaser, placeholder: "Short Description of Yourself", :rows => "5" %>
+      </div>
+    </div>
+    <div class='control-group edit-description'>
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, placeholder: "Describe yourself", :rows => "15", :class => "description-area" %>
+      </div>
+    </div>
+
+    <label class="control-label" for="profile_picture">Upload your profile picture</label>
+    <%= f.file_field :profile_picture %>
+
+    <%= f.submit 'Update Profile', class: 'btn btn-primary span2' %>
+  </div>
+
+<% end %>

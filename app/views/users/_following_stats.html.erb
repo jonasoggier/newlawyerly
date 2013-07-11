@@ -1,0 +1,11 @@
+<h4 id="ajax-following-count">Following: <%= @user.relationships.count %></h4>
+			
+<% if current_user == @user %>
+	<ul class="current_user-display">
+		<% @user.relationships.each do |relationship| %>
+			<%= image_tag relationship.followed_user.profile_picture_url(:small_thumb).to_s, :class => "profile_picture small_thumb_profile_picture small_thumb_correction" %>
+			<li><%= link_to "#{relationship.followed_user.first_name} #{relationship.followed_user.last_name}", relationship.followed_user %> <%= link_to "Unfollow", relationship, :method => :delete, :class => "btn btn-warning btn-mini" %></li>
+			<div id="clearfix"></div>
+		<% end %>  
+	</ul>
+<% end %>

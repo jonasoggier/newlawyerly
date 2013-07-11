@@ -1,0 +1,68 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts-container {
+	float: left;
+	margin-bottom: 40px;
+	width: 600px;
+	height: auto;
+	background-color: white;
+	color: #333;
+	border-radius: 5px;
+	box-shadow: 1px 1px 1px #E6E6E6;
+	padding: 30px 60px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	h2 {
+		border-bottom: 1px solid #E6E6E6;
+		padding: 15px 0;
+	}
+}
+
+.post {
+	border-bottom: 1px solid #E6E6E6;
+	padding: 10px 0;
+	h5 {
+		font-size: 26px;
+		font-weight: bold;
+		line-height: 30px;
+		margin-top: 5px;
+	}
+	.subline {
+		font-style: italic;
+		font-size: 18px;
+		padding-top: 10px;
+	}
+	h6 {
+		font-size: 20px;
+		line-height: 27px;
+		font-weight: normal;
+		padding-top: 10px;
+	}
+	#comments-show {
+		margin-left: -23px;
+		font-size: 18px;
+		padding-bottom: 15px;
+	}
+	.hide-comments {
+		display: none;
+	}
+	ul {
+		list-style: none;
+		list-style-position: outside;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	.comment-body {
+		margin-left: -23px;
+		font-size: 18px;
+	}
+	.comment-box {
+		margin-left: -44px;
+	}
+}
+
+.post-show {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}

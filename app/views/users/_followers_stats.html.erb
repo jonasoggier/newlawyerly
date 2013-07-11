@@ -1,0 +1,16 @@
+<h4 id="ajax-followers-count">Followers: <%= @user.inverse_relationships.count %></h4>
+
+<% if current_user == @user %>
+	<ul class="current_user-display">
+	  <% @user.inverse_followed_users.each do |user| %>
+	  	<%= image_tag user.profile_picture_url(:small_thumb).to_s, :class => "profile_picture small_thumb_profile_picture small_thumb_correction" %>
+	  	<li>
+	  		<%= link_to "#{user.first_name} #{user.last_name}", user %> 
+				<% unless following_helper_2?(user) %>
+	  			<%= link_to "Follow", relationships_path(:followed_user_id => user), :method => :post, :class => "btn btn-primary btn-mini" %>
+	  		<% end %>
+	  	</li>
+	  	<div id="clearfix"></div>
+	  <% end %>
+	</ul>
+<% end %>

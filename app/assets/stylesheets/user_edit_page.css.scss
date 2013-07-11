@@ -1,0 +1,21 @@
+.edit-user {
+	float: left;
+	height: auto;
+	width: 600px;
+	margin-top: 80px;
+	margin-left: 20%;
+	.form-horizontal {
+		padding-top: 20px;
+	}
+	.control-group {
+		width: 250px;
+	}
+	.edit-description {
+		float: right;
+		margin-top: -385px;
+		margin-right: 60px;
+		.description-area {
+			width: 308px;
+		}
+	}
+}
