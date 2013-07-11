@@ -1,7 +1,27 @@
-<% if logged_in? %>
-	<%= render 'feed' %>
-<% else %>
-	<%= render 'welcomescreen' %>
-<% end %>
+<div class="left-section">
 
+	<div class="logo">Lawyerly</div>
+
+	<div class="overview-container">
+		<h1>Lawyerly</h1>
+		<h2>Die Plattform für Schweizer Juristen.</h2>
+		<h3>Neues. Juristisches. Menschliches.</h3>
+		<div class="divider"></div>
+		<div class="sign-in">Anmelden</div>
+		<p class="sign-up">Neu auf Lawyerly?<br>Registrieren Sie sich <a href="#">hier</a>.</p>
+	</div>
+
+</div>
+
+
+<div class="right-section">
+
+
+
+<%= render 'shared/posts', :posts_variable => @feed_items %>
+
+
+
+
+</div>
 

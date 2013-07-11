@@ -1,0 +1,84 @@
+.left-section {
+	background-image: image-url("front-image2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 30%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	font-family:'EB Garamond', serif;
+	color: white;
+	text-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 3px;
+	-moz-box-shadow:    1px 0 0 0 rgba(0,0,0,0.3);
+  	-webkit-box-shadow: 1px 0 0 0 rgba(0,0,0,0.3);
+  	box-shadow:         1px 0 0 0 rgba(0,0,0,0.3);
+
+	.logo {
+		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-size: 24px;
+		color: white;
+		background-color: black;
+		opacity: 0.7;
+		height: 60px;
+		width: 112px;
+		position: absolute;
+		top: 3%;
+		left: 5%;
+		padding: 8px;
+	}
+
+	.overview-container {
+		position: absolute;	
+		left: 8%;
+		bottom: 5%;
+	}
+
+	h1 {
+		font-size: 40px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	h3 {
+		font-size: 22px;
+		margin-top: -20px;
+	}
+
+	.divider {
+		height: 1px;
+		width: 100%;
+		background-color: white;
+
+	}
+
+	.sign-in {
+		margin-top: 20px;
+		background-color: rgb(87, 173, 104);
+		color: white;
+		border-radius: 4px;
+		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-size: 13px;
+		padding: 7px 24px;
+		width: 66px;
+		text-shadow: none;
+		&:hover {
+			background-color: rgb(78, 158, 94);
+		}
+	}
+
+	.sign-up {
+		margin-top: -37px;
+		margin-left: 160px;
+		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-size: 13px;
+		a {
+			color: white;
+			text-decoration: none;
+			border-bottom: 1px dotted white;
+		}
+
+	}
+}

@@ -8,19 +8,13 @@
 </head>
 <body>
 
-<div id="container">
 
-	<% if logged_in? %>
-		<%= render "/layouts/nav" %>
-	<% end %>
 
-	<%= yield %>
+<%= yield %>
 
-</div>
 
-<div id='footer'>
-	<%= render "/layouts/footer" %>
-</div>
+
+
 
 </body>
 </html>
