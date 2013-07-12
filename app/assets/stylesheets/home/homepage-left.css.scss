@@ -1,8 +1,8 @@
 .left-section {
 	background-image: image-url("front-image3.jpg");
 	background-repeat: no-repeat;
+	background-position: center center;
 	background-size: 100%;
-	background-position: center bottom;
 	width: 30%;
 	position: fixed;
 	top: 0;
@@ -16,7 +16,7 @@
   	box-shadow:         1px 0 0 0 rgba(0,0,0,0.3);
 
 	.logo {
-		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 		font-size: 24px;
 		color: white;
 		background-color: black;
@@ -48,12 +48,11 @@
 		margin-top: -20px;
 	}
 
-	.divider {
+	.homepage-divider {
 		height: 1px;
 		width: 100%;
 		background-color: white;
 		opacity: 0.5;
-
 	}
 
 	.sign-in {
@@ -61,7 +60,7 @@
 		background-color: rgb(87, 173, 104);
 		color: white;
 		border-radius: 4px;
-		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 		font-size: 13px;
 		padding: 7px 24px;
 		width: 66px;
@@ -74,13 +73,12 @@
 	.sign-up {
 		margin-top: -37px;
 		margin-left: 160px;
-		font-family: freight-sans-pro, 'Myriad Pro', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 		font-size: 13px;
 		a {
 			color: white;
 			text-decoration: none;
 			border-bottom: 1px dotted white;
 		}
-
 	}
 }

@@ -6,7 +6,7 @@
 		<h1>Lawyerly</h1>
 		<h2>Die Plattform für Schweizer Juristen.</h2>
 		<h3>Neues. Juristisches. Menschliches.</h3>
-		<div class="divider"></div>
+		<div class="homepage-divider"></div>
 		<div class="sign-in">Anmelden</div>
 		<p class="sign-up">Neu auf Lawyerly?<br>Registrieren Sie sich <a href="#">hier</a>.</p>
 	</div>
@@ -16,12 +16,24 @@
 
 <div class="right-section">
 
+	<div class="text-area">
 
+		<div class="divider-bar top-divider-bar">
+			<a href="#">Empfohlen von Lawyerly <span>Mehr ></span></a>
+		</div>
 
-<%= render 'shared/posts', :posts_variable => @feed_items %>
+		<!-- Empfehlungspost von Lawyerly -->
+		<%= render 'postoverview', :post => @posts.first %>
+	
+		<div class="divider-bar">
+			Neuste Beiträge
+		</div>
 
+		<!-- Neuste Beiträge -->
+		<% @posts.each do |post| %>
+			<%= render 'postoverview', :post => post %>
+		<% end %>
 
-
-
+	</div>
 </div>
 
