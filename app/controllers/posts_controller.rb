@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
 
-  # The 'new action' is 'included' under views/users/show
+  skip_before_filter :require_login, :only => :show
 
   def show
     @post = Post.find(params[:id])
   end
 
+
+
+
+  # To be amended for NewLawyerly!!
 	def create
     @user = User.find(params[:user_id]) 
   	@post = @user.posts.build(params[:post])

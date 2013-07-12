@@ -1,7 +1,39 @@
-<div class="text-container">
-	<div class="feed-container post-show">
-		<%= render '/shared/flashes' %>
-		<%= render 'shared/post', :post => @post %>
+<div class="author-container">
+
+	<div class="author-info">
+		<%= link_to (image_tag @post.user.profile_picture_url(:thumb).to_s, :class => "profile-picture"), @post.user %>
+
+		<p class="name"><%= link_to name(@post), @post.user %></p>
+		<p class="teaser"><%= @post.user.teaser %></p>
+
+		<div class="author-divider"></div>
+
+		<p class="published-at">Veröffentlicht</p>
+		<p class="date"><%= @post.created_at.strftime("%d %b. %Y") %></p>
+
 	</div>
+
 </div>
+
+
+
+<div class="post-container">
+	
+	<div class="text-area">
+
+		<p class="title"><%= @post.title %></p>
+
+		<p class="comments"><%= pluralize(@post.comments.count, 'comment') %></p>
+	
+		<p class="text"><%= @post.body %></p>		
+		
+	</div>
+
+</div>
+
+
+
+
+
+	
 
