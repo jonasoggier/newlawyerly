@@ -65,8 +65,13 @@
 		padding: 7px 24px;
 		width: 66px;
 		text-shadow: none;
+		transition: background-color 0.1s linear; /* vendorless fallback */
+	    -o-transition: background-color 0.1s linear; /* opera */
+	    -ms-transition: background-color 0.1s linear; /* IE 10 */
+	    -moz-transition: background-color 0.1s linear; /* Firefox */
+	    -webkit-transition: background-color 0.1s linear; /*safari and chrome */
 		&:hover {
-			background-color: rgb(78, 158, 94);
+			background-color: rgb(72, 170, 91);
 		}
 	}
 
