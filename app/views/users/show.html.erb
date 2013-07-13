@@ -1,48 +1,28 @@
 <div class="text-container">
 	
-	<%= render '/shared/flashes' %>
+	
 
   <div class="user-container">
 		<div class="user-info">
-			<h3><%= @user.first_name %> <%= @user.last_name %></h3>
+			<h3><%= user_name(@user) %></h3>
 			
-			<% unless @user == current_user %> 
-				<% if following_helper_1? %>
-					<%= render 'unfollow_button' %>
-				<% else %>
-					<%= render 'follow_button' %>
-				<% end %>
-			<% end %>
 
-			<%= image_tag @user.profile_picture_url.to_s, :class => "profile_picture" %>
+			<%= image_tag @user.profile_picture_url.to_s, :class => "profile-picture" %>
 			<h5><%= @user.teaser %></h5>
-			<br>
+			
 			<h6><%= @user.description %></h6>
-
-			<h6><% if current_user == @user %>
-				<%= link_to "Edit Profile", edit_user_path %>
-				<%= link_to "Delete Account", user_path, :method => :delete, :confirm => "Are you sure that you want to delete your account?" %>
-			</h6>
+				
+		
+		
 			
-			<div>
-				<h5>New Post</h5>
-				<%= form_for [@user, @post] do |f| %>
-					<%= render "shared/newpost", :f => f %> 
-				<% end %>
-			</div>
-			
-			<% end %>
 		</div>
 
-		<div class="users-list-container">
-			<%= render 'following_stats' %>
-			<%= render 'followers_stats' %>
-		</div>
+
 
 		<!-- Display list of all posts -->
 		<div class="posts-container">
 			<h2>Latests posts</h2>
-			<%= render 'shared/posts', :posts_variable => @posts %>
+			
 		</div>
 	</div>
 

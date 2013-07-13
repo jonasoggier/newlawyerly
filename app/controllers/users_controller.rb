@@ -1,20 +1,17 @@
 class UsersController < ApplicationController
   
-  skip_before_filter :require_login, :only => [:create]
-
-  # "new action" is on homepage (home#index) 
-  
-  def index # exclusively needed for user search in navbar
-    @search_users = PgSearch.multisearch(params[:search])
-    session[:search_users] = @search_users # needs to be saved in session b/c of redirect
-    redirect_to :back
-  end
+  skip_before_filter :require_login, :only => [:show]
 
   def show
     @user = User.find(params[:id]) 
-    @post = Post.new # needed as input for new posts form
-    @posts = @user.posts.page params[:page] # needed to display list of all posts
+    @posts = @user.posts
   end
+
+
+
+
+
+  # To be amended for NewLawyerly!!
 
   def create
   	@user = User.new(params[:user])
