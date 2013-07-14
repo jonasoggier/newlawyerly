@@ -21,7 +21,7 @@
 		</div>
 
 		<!-- Empfehlungspost von Lawyerly -->
-		<%= render 'postoverview', :post => @posts.first %>
+		<%= render 'shared/postoverview', :post => @posts.first %>
 	
 		<div class="divider-bar">
 			Neuste Beiträge
@@ -29,7 +29,7 @@
 
 		<!-- Neuste Beiträge -->
 		<% @posts.each do |post| %>
-			<%= render 'postoverview', :post => post %>
+			<%= render 'shared/postoverview', :post => post %>
 		<% end %>
 
 	</div>

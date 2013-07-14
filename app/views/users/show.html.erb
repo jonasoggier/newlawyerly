@@ -1,32 +1,42 @@
-<div class="text-container">
-	
-	
+<div class="user-container">
 
-  <div class="user-container">
-		<div class="user-info">
-			<h3><%= user_name(@user) %></h3>
+	<div class="background-image-container">
+
+		<%= image_tag("matterhorn.jpg") %>
+
+		<%= image_tag @user.profile_picture_url.to_s, :class => "user-picture" %>
+
+	</div>	
+
+
+	<div class="user-info">
+		<p class="name"><%= user_name(@user) %></p>
 			
+		<p class="teaser"><%= @user.teaser %></p>
 
-			<%= image_tag @user.profile_picture_url.to_s, :class => "profile-picture" %>
-			<h5><%= @user.teaser %></h5>
+		<div class="author-divider"></div>
 			
-			<h6><%= @user.description %></h6>
-				
-		
-		
-			
-		</div>
-
-
-
-		<!-- Display list of all posts -->
-		<div class="posts-container">
-			<h2>Latests posts</h2>
-			
-		</div>
-	</div>
+		<p class="email"><%= @user.email %></p>
+	</div>	
 
 </div>
 
+
+
+<div class="right-section">
+
+	<div class="text-area">
+
+		<div class="divider-bar top-divider-bar">
+			<a href="#">Neuste Beiträge von <%= user_name(@user) %></a>
+		</div>
+
+		<!-- Neuste Beiträge -->
+		<% @posts.each do |post| %>
+			<%= render 'shared/postoverview', :post => post %>
+		<% end %>
+
+	</div>
+</div>
 
 
