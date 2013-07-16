@@ -27,7 +27,7 @@ class ProfilePictureUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
-  process :resize_to_fill => [600, 450]
+  process :resize_to_fill => [450, 450]
   #
   # def scale(width, height)
   #   process :resize_to_fill => [width, height]

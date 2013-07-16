@@ -1,0 +1,30 @@
+.divider-bar {
+	height: 40px;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+	text-transform: uppercase; 
+	color: rgb(179, 179, 177);
+	font-weight: bold;
+	font-size: 12px;
+	letter-spacing: 1px;
+	line-height: 40px;
+	border-bottom: 1px solid rgb(222, 222, 220);	
+	a {
+		color: rgb(179, 179, 177);
+		text-decoration: none;
+	    transition: color 0.2s linear; /* vendorless fallback */
+	    -o-transition: color 0.2s linear; /* opera */
+	    -ms-transition: color 0.2s linear; /* IE 10 */
+	    -moz-transition: color 0.2s linear; /* Firefox */
+	    -webkit-transition: color 0.2s linear; /*safari and chrome */
+		&:hover {
+			color: gray;
+		}
+	}	
+	span {
+		float: right;
+	}
+}
+
+.top-divider-bar {
+	border-top: 1px solid rgb(222, 222, 220);	
+}

@@ -2,10 +2,16 @@
 	<div>
 		<p class="title"><%= link_to post.title, user_post_path(post.user, post) %></p>
 
-		<%= link_to (image_tag post.user.profile_picture_url(:thumb).to_s, :class => "profile-picture"), post.user %>
+		<% if controller_name == "home" %>
+			<%= link_to (image_tag post.user.profile_picture_url(:thumb).to_s, :class => "profile-picture"), post.user %>
+		<% end %>
 	</div>
 	
-	<p class="subline" id="clearfix"><span><%= link_to name(post), post.user %></span> hat dies vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> geschrieben · <%= pluralize(post.comments.count, 'comment') %></p>
+	<% if controller_name == "home" %>
+		<p class="subline" id="clearfix"><span><%= link_to name(post), post.user %></span> hat dies vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert · <%= pluralize(post.comments.count, 'comment') %></p>
+	<% else %>
+		<p class="subline" id="clearfix">Vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert · <%= pluralize(post.comments.count, 'comment') %></p>
+	<% end %>
 	
 	<p class="text"><%= link_to (raw(truncate(post.body, :length => 270, :separator => ' ', :omission =>'...'))), user_post_path(post.user, post) %></p>		
 		
