@@ -27,16 +27,25 @@
 
 	<div class="text-area">
 
-		<div class="divider-bar top-divider-bar">
-			<a href="#">Neuste Beiträge von <%= user_name(@user) %></a>
-		</div>
+		<% if @posts.any? %>
 
-		<!-- Neuste Beiträge -->
-		<% @posts.each do |post| %>
-			<%= render 'shared/postoverview', :post => post %>
+			<div class="divider-bar top-divider-bar">
+				<a href="#">Neuste Beiträge von <%= user_name(@user) %></a>
+			</div>
+
+			<!-- Neuste Beiträge -->
+			<% @posts.each do |post| %>
+				<%= render 'shared/postoverview', :post => post %>
+			<% end %>
+
+		<% else %>
+			<div class="no-posts-message">
+				<% if current_user == @user %>Sie haben<% else %><%= user_name(@user) %> hat<% end %> bislang noch nichts publiziert. <br><span>Gehen Sie <a href="#">hier</a> zu unseren empfohlenen Beiträgen.</span>
+			</div>
 		<% end %>
 
 	</div>
 </div>
+
 
 
