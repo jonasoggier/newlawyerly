@@ -17,27 +17,5 @@
 
 
 $(document).ready(function() {
-	// Dropdown for new post in navbar:
-	$('.dropdown-trigger-newpost').click(function(e){
-		e.preventDefault();
-		$('#navdropdown-notifications').hide();
-		$('#navdropdown-newpost').toggle();
-	})	
-	// Dropdown for notifications in navbar:
-	$('.dropdown-trigger-notifications').click(function(e){
-		e.preventDefault();
-		$('#navdropdown-newpost').hide();
-		$('#navdropdown-notifications').toggle();
-	})	
 
-	// Footer:
-	$('#footer li a').mouseenter(function(e){
-		$(this).addClass('css-mouseover');
-	})
-	$('#footer li a').mouseleave(function(e){
-		$(this).removeClass('css-mouseover');
-	})
-	$('#footer li a').click(function(e){
-		e.preventDefault();
-	})
 });

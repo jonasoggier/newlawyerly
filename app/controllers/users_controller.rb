@@ -1,17 +1,11 @@
 class UsersController < ApplicationController
   
-  skip_before_filter :require_login, :only => [:show]
+  skip_before_filter :require_login, :only => [:show, :create]
 
   def show
     @user = User.find(params[:id]) 
     @posts = @user.posts
   end
-
-
-
-
-
-  # To be amended for NewLawyerly!!
 
   def create
   	@user = User.new(params[:user])
@@ -22,6 +16,11 @@ class UsersController < ApplicationController
   		redirect_to root_path, alert: "There was a problem with your sign-up. Please try again." # TODO!!!
     end
   end
+
+
+
+
+  # To be amended for NewLawyerly!!
 
   def edit
     if current_user == User.find(params[:id]) # TBD if this is sufficient protection!

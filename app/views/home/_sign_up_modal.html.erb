@@ -1,0 +1,61 @@
+<div id="sign-up-form" class="modal">
+
+  <h2>Gratulation! Sie werden Ihre Anmeldung nicht bereuen.</h2>
+
+  <div class="left-part">Warum Sie Lawyerly <span>lieben</span> werden:
+  	<ul>
+  		<li>Sie erhalten Zugriff auf alle Funktionen</li>
+  		<li>Sie können selbst Beiträge verfassen</li>
+  		<li>Sie erhalten Zugang zu exklusiven Aktionen und Veranstaltungen</li>
+  		<li class="bold">Garantiert kostenlos</li>
+  	</ul>
+  </div>
+
+  <div class="right-part"> 
+
+	  <%= form_for @user do |f| %>
+
+	    <% unless f.object.errors.empty? %>
+	        <% if @user.errors.any? %>
+	          <div id="error_explanation" class="alert alert-error">
+	            <h3><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</h3>
+	            <ul>
+	              <% @user.errors.full_messages.each do |msg| %>
+	                <li><%= msg %></li>
+	              <% end %>
+	            </ul>
+	          </div>
+	      <% end %>
+	    <% end %>
+	        
+	    <div>
+	    	<label>Vorname</label>
+	      <%= f.text_field :first_name, placeholder: "z.B. Fabienne", class: "input-block-level" %>
+	      <label>Nachname</label>
+	      <%= f.text_field :last_name, placeholder: "z.B. Baumann", class: "input-block-level" %>
+	      <label>Email</label>
+	      <%= f.text_field :email, placeholder: "z.B. fabienne.baumann@lawyers.com", class: "input-block-level" %>
+	      <br><span>Ihre Email-Adresse ist bei uns sicher. Garantiert kein Spam.</span>
+	      <label>Passwort</label>
+	      <%= f.password_field :password, placeholder: "Passwort", class: "input-block-level" %>
+	      <br><span>Bitte wählen Sie ein Passwort mit mindestens 5 Zeichen.</span>
+	      <label>Mit der Registrierung stimmen Sie unseren <a href="#">allgemeinen Geschäftsbedingungen</a> zu.</label>
+	      <%= f.submit 'Jetzt registrieren', class: 'sign-in' %>
+	    </div>
+
+	  <% end %>
+  </div>
+	
+	<div class="lower-part">
+		
+			<div class="left-part">Sie treten einer Gemeinschaft mit 5'794 Schweizer Juristen bei
+				<% @example_users.each do |user| %>
+					<%= image_tag user.profile_picture_url(:thumb).to_s, :class => "profile-picture" %>
+				<% end %>
+			</div>
+			<div class="right-part">"Ich benütze Lawyerly jeden Tag!" <br><span>Jonas Oggier</span><br>
+				"Mit Lawyerly halte ich mich über alle aktuellen Entwicklungen auf dem Laufenden!" <br><span>Fabienne Baumann</span></div>
+		</div>
+	</div>
+
+</div>

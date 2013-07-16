@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_picture, ProfilePictureUploader
 
-  validates_length_of :password, :minimum => 4, :flash => "Password must be at least 5 characters long", :if => :password
+  validates_length_of :password, :minimum => 5, :flash => "Password must be at least 5 characters long", :if => :password
   validates_confirmation_of :password, :flash => "Password should match confirmation", :if => :password
   validates :email, :presence => true, :uniqueness => true
 
