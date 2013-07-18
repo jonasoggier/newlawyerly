@@ -28,4 +28,14 @@
 	.sign-in {
 		border: none;
 	}
+
+	h3 {
+		margin-top: 15px;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: normal;
+		a {
+			border-bottom: 1px dotted black;
+		}
+	}
 }
