@@ -22,6 +22,7 @@
 	}
 
 	#navbar {
+		margin-top: -50px; // hide for jQuery effect
 		height: 50px;
 		margin-left: 130px; // i.e. width of logo
 		background-color: black;
@@ -43,6 +44,7 @@
 			}
 
 			.nav-right {
+				margin-top: -50px;
 				float: right;
 				margin-right: 10px;
 				span {
