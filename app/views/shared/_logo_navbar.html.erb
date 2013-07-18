@@ -1,0 +1,28 @@
+<div id="logo-navbar">
+
+	<!-- Logo -->
+	<a href="/"><div id="logo">Lawyerly <i class="icon-chevron-down icon-white"></i></div></a>
+
+	<!-- Navbar (only if logged in!) -->
+	<% if logged_in? %>
+		<div id="navbar">
+			<ul>
+				<!-- Startseite -->
+				<i class="icon-bookmark icon-white"></i><li><a href="/">Startseite</a>
+	  	  </li>
+				
+				<!-- Mein Profil -->
+  	  	<i class="icon-user icon-white"></i><li><%= link_to "Mein Profil", user_path(current_user) %></li> 
+	  	  
+	  	  <!-- Neuer Beitrag -->
+	  	  <i class="icon-pencil icon-white"></i><li><a href="#">Neuer Beitrag</a></li>
+
+	  	  <!-- Sign-in/Sign-out -->
+	  	  <div class="nav-right">
+		  		<li><span>Angemeldet als <%= user_name(current_user) %></span><%= link_to 'Abmelden', :session, :method => :delete, :class => "sign-in" %></li>
+	  	 	</div>
+	  	</ul>
+  	</div>
+	<% end %>
+
+</div>
