@@ -11,9 +11,9 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
   		auto_login(@user)
-  		redirect_to @user, notice: "Account successfully created."
+  		redirect_to @user, notice: "Benutzerprofil erfolgreich erstellt. Vielen Dank für Ihr Vertrauen."
   	else
-  		redirect_to root_path, alert: "There was a problem with your sign-up. Please try again." # TODO!!!
+  		redirect_to root_path, alert: "Es gab ein Problem mit ihrer Registrierung. Füllen Sie alle Felder aus und benützen Sie eine Email-Adresse, für die noch kein Benutzerkonto besteht." 
     end
   end
 

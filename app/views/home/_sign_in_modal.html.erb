@@ -1,0 +1,20 @@
+<div id="sign-in-form" class="modal">
+
+	<div class="outside-border">
+
+	  <h2>Lawyerly Anmeldung</h2>
+
+	  <%= form_tag session_path, :method => :post do %>
+	    <div>
+	      <label>Email-Adresse</label>
+	      <%= text_field_tag :email, params[:email], class: "input-block-level" %>
+	      <label>Passwort (<%= link_to "Passwort vergessen?", root_path, class: "password" %>)</label>
+	      <%= password_field_tag :password, class: "input-block-level" %>
+	      <br>
+	      <%= submit_tag 'Anmelden', class: 'sign-in' %>
+	    </div>
+	  <% end %>
+
+  </div>
+
+</div>

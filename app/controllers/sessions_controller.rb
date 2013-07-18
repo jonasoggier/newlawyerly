@@ -5,15 +5,15 @@ class SessionsController < ApplicationController
   def create
 		@user = login(params[:email], params[:password])
 		if @user
-			redirect_to root_path
+			redirect_to root_path, notice: "Schön, dass Sie vorbeischauen, #{@user.first_name}!"
 		else
-			redirect_to :root, :alert => "Invalid credentials. Please try again!"
+			redirect_to :root, :alert => "Ungültiger Benutzername oder Passwort. Versuchen Sie es bitte nochmals!"
 		end
   end
 
   def destroy
 		logout
-		redirect_to :root, notice: "Bye... Hope to see you later!"
+		redirect_to :root, notice: "Auf Wiedersehen... Hoffentlich kommen Sie bald wieder!"
   end
 
 end

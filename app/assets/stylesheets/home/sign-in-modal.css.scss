@@ -1,0 +1,31 @@
+#sign-in-form {
+	width: 350px;
+	padding: 0;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+
+	.outside-border {
+		margin: 20px;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	label {
+		margin-top: 10px;
+		font-weight: bold;
+		.password {
+			font-size: 11px;
+			border-bottom: 1px dotted black;
+		}
+	}
+
+	.input-block-level {
+		width: 250px;
+		margin-bottom: 0;
+	}
+
+	.sign-in {
+		border: none;
+	}
+}

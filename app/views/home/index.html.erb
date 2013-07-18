@@ -5,16 +5,22 @@
 		<h2>Die Plattform für Schweizer Juristen.</h2>
 		<h3>Neues. Juristisches. Menschliches.</h3>
 		<div class="homepage-divider"></div>
-		<a href="#"><div class="sign-in">Anmelden</div></a>
+		<a href="#sign-in-form" rel="modal:open"><div class="sign-in">Anmelden</div></a>
 		<p class="sign-up">Neu auf Lawyerly?<br>Registrieren Sie sich <a href="#sign-up-form" rel="modal:open">hier</a>.</p>
 	</div>
 </div>
+
+
+<!-- Sign-in Modal -->
+<%= render 'sign_in_modal' %>
 
 <!-- Sign-up Modal -->
 <%= render 'sign_up_modal' %>
 
 
 <div class="right-section">
+
+	<%= render 'shared/flashes' %>
 
 	<div class="text-area">
 

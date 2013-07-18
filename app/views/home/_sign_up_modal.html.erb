@@ -29,15 +29,15 @@
 	    <% end %>
 	        
 	    <div>
-	    	<label>Vorname</label>
-	      <%= f.text_field :first_name, placeholder: "z.B. Fabienne", class: "input-block-level" %>
+	      <label>Vorname</label>
+	      <%= f.text_field :first_name, class: "input-block-level" %>
 	      <label>Nachname</label>
-	      <%= f.text_field :last_name, placeholder: "z.B. Baumann", class: "input-block-level" %>
+	      <%= f.text_field :last_name, class: "input-block-level" %>
 	      <label>Email</label>
-	      <%= f.text_field :email, placeholder: "z.B. fabienne.baumann@lawyers.com", class: "input-block-level" %>
+	      <%= f.text_field :email, class: "input-block-level" %>
 	      <br><span>Ihre Email-Adresse ist bei uns sicher. Garantiert kein Spam.</span>
 	      <label>Passwort</label>
-	      <%= f.password_field :password, placeholder: "Passwort", class: "input-block-level" %>
+	      <%= f.password_field :password, class: "input-block-level" %>
 	      <br><span>Bitte wählen Sie ein Passwort mit mindestens 5 Zeichen.</span>
 	      <label>Mit der Registrierung stimmen Sie unseren <a href="#">allgemeinen Geschäftsbedingungen</a> zu.</label>
 	      <%= f.submit 'Jetzt registrieren', class: 'sign-in' %>
@@ -45,6 +45,8 @@
 
 	  <% end %>
   </div>
+
+  <div id="clearfix"></div>
 	
 	<div class="lower-part">
 		
@@ -54,8 +56,8 @@
 				<% end %>
 			</div>
 			<div class="right-part">"Ich benütze Lawyerly jeden Tag!" <br><span>Jonas Oggier</span><br>
-				"Mit Lawyerly halte ich mich über alle aktuellen Entwicklungen auf dem Laufenden!" <br><span>Fabienne Baumann</span></div>
-		</div>
+				"Mit Lawyerly halte ich mich über alle aktuellen Entwicklungen auf dem Laufenden!" <br><span>Fabienne Baumann</span>
+			</div>	
 	</div>
 
 </div>
