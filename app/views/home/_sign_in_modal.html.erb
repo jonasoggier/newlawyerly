@@ -8,12 +8,13 @@
 	    <div>
 	      <label>Email-Adresse</label>
 	      <%= text_field_tag :email, params[:email], class: "input-block-level" %>
-	      <label>Passwort (<%= link_to "Passwort vergessen?", root_path, class: "password" %>)</label>
+	      <label>Passwort</label>
 	      <%= password_field_tag :password, class: "input-block-level" %>
 	      <br>
 	      <%= submit_tag 'Anmelden', class: 'sign-in' %>
 
 	      <h3>Noch kein Benutzerkonto? Melden Sie sich <a href="#sign-up-form" rel="modal:open">hier</a> an.</h3>
+	      <h3><%= link_to "Passwort vergessen?", root_path, class: "password" %></h3>
 	    </div>
 	  <% end %>
 

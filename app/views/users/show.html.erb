@@ -22,8 +22,12 @@
 </div>
 
 
-
 <div class="right-section">
+
+	<!-- Needed to push down text-area and flashes b/c of navbar -->
+	<% if logged_in? %>
+		<div id="push-down-element"></div>
+	<% end %>
 
 	<%= render 'shared/flashes' %>
 
