@@ -10,7 +10,7 @@
 	  	<i class="icon-user <%= "active" if current_page?(user_path(current_user)) %>"><li><%= link_to "Mein Profil", user_path(current_user) %></li></i>
   	  
   	  <!-- Neuer Beitrag -->
-  	  <i class="icon-pencil"><li><a href="#">Neuer Beitrag</a></li></i>
+  	  <i class="icon-pencil"><li><%= link_to "Neuer Beitrag", new_user_post_path(current_user) %></li></i>
 
   	  <!-- Sign-in/Sign-out -->
   	  <div class="nav-right">

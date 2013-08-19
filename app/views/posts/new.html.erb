@@ -1,0 +1,37 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+Neuen Beitrag verfassen
+
+<%= form_for [current_user, @post] do |f| %>
+	<div class="span8 newpost">
+	  <%= f.text_field :title, placeholder: "Geben Sie hier den Titel des Beitrags ein...", class: "input-block-level" %>
+	  <%= f.text_area :body, placeholder: "Geben Sie hier den Text des Beitrags ein...", id: "some-textarea" %>
+	  <%= f.submit 'Beitrag publizieren', class: 'sign-in' %>
+	</div>
+<% end %>
+
+
+
+<!-- Text Editor -->
+<script type="text/javascript">
+	$(document).on('page:load', function(){
+	  window['rangy'].initialized = false
+	})
+	$('#some-textarea').wysihtml5({
+		"font-styles": false, //Font styling, e.g. h1, h2, etc. Default true
+		"emphasis": true, //Italics, bold, etc. Default true
+		"lists": false, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+		"html": false, //Button which allows you to edit the generated HTML. Default false
+		"link": true, //Button to insert a link. Default true
+		"image": false, //Button to insert an image. Default true,
+		"color": false //Button to change color of font  
+	});
+</script>
+
+				

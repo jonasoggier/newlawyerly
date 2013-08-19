@@ -13,6 +13,7 @@
 		<p class="subline" id="clearfix">Vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert · <%= pluralize(post.comments.count, 'comment') %></p>
 	<% end %>
 	
-	<p class="text"><%= link_to (raw(truncate(post.body, :length => 270, :separator => ' ', :omission =>'...'))), user_post_path(post.user, post) %></p>		
+	<!-- strip_tags takes out all html tags inserted by JS editor -->
+	<p class="text"><%= link_to strip_tags(post.body.truncate(270, :separator => ' ', :omission =>'...')), user_post_path(post.user, post) %></p>		
 		
 </div>

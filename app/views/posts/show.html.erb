@@ -18,6 +18,13 @@
 
 
 <div class="post-container">
+
+	<!-- Needed to push down text-area and flashes b/c of navbar -->
+	<% if logged_in? %>
+		<div id="push-down-element"></div>
+	<% end %>
+
+	<%= render 'shared/flashes' %>
 	
 	<div class="text-area">
 
@@ -25,7 +32,8 @@
 
 		<p class="comments"><%= pluralize(@post.comments.count, 'comment') %></p>
 	
-		<p class="text"><%= @post.body %></p>		
+		<!-- Sanitize displays correct mark-up -->
+		<p class="text"><%= sanitize @post.body %></p>		
 		
 	</div>
 
