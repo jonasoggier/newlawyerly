@@ -9,7 +9,7 @@
 	      <label>Email-Adresse</label>
 	      <%= text_field_tag :email, params[:email], class: "input-block-level" %>
 	      <label>Passwort</label>
-	      <%= password_field_tag :password, class: "input-block-level" %>
+	      <%= password_field_tag :password, params[:password], class: "input-block-level" %>
 	      <br>
 	      <%= submit_tag 'Anmelden', class: 'sign-in' %>
 
