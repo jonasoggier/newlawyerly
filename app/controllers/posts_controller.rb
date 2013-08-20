@@ -19,16 +19,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
 
-
-  # To be amended for NewLawyerly!!
+  def update  
+      @post = current_user.posts.find(params[:id])
+      if @post.update_attributes(params[:post])  
+        redirect_to [current_user, @post], notice: "Beitrag erfolgreich angepasst." 
+      else
+        render :edit
+      end
+  end
 
   def destroy  
-    #if current_user == User.find(params[:id]) # TBD if this is sufficient protection!
-      @post = Post.find(params[:id])
-      @post.destroy
-      redirect_to current_user, alert: "Post successfully deleted."
-    #end
+    @post = current_user.posts.find(params[:id])
+    @post.destroy
+    redirect_to current_user, alert: "Beitrag erfolgreich gelöscht."
   end
 
 end

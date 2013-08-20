@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]) 
-    @posts = @user.posts
+    @posts = @user.posts.reverse
   end
 
   def create

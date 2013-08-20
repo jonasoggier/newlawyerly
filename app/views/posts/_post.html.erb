@@ -1,0 +1,62 @@
+<div class="new-post-area">
+
+	<div class="redactional-rules">
+		<h4>Verbindliche Richtlinien für Beiträge:</h4>
+		<ul>
+			<li>Ihr Beitrag darf weder <span>Urheberrechte</span> noch andere Rechte Dritter verletzen (insbesondere <span>Persönlichkeitsrechte</span>).</li>
+			<li>Sie sind alleine für den Inhalt des Beitrags <span>verantwortlich</span>. Lawyerly übernimmt keine Verantwortung diesbezüglich.</li>
+			<li>Ihr Beitrag muss inhaltich <span>korrekt</span> sein. Gerüchte, Mutmassungen und andere schwer überprüfbare Behauptungen sind nicht erlaubt.</li>
+			<li>Ihr Beitrag muss einen <span>Bezug zu juristischen Themen</span> oder der <span>juristischen Arbeitswelt</span> haben. Nicht erlaubt sind rein politische Texte, kommerzielle Beiträge ohne Mehrwert für die Leser und anstössige Inhalte.</li>
+			<li>Lawyerly behält sich das Recht vor, <span>Beiträge kommentarlos zu löschen</span>, die diese Richtlinien verletzen oder auf sonstige Weise unangebracht sind. Lawyerly kann auch Beiträge vor deren Veröffentlichung überprüfen und Letztere aus denselben Gründen verweigern.</li>
+			<li>Es besteht <span>kein Anspruch auf Veröffentlichung</span> eines Beitrags.</li>
+		</ul>
+	</div>
+
+	<div class="new-post">
+		
+		<h3><%= post_header %></h3>
+
+		<%= form_for [current_user, @post] do |f| %>
+
+			<% if @post.errors.any? %>
+			  <div id="error_explanation" class="alert alert-error">
+			    <h3><%= pluralize(@post.errors.count, "error") %> prohibited this form from being saved:</h3>
+			    <ul>
+			      <% @post.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			    </ul>
+			  </div>
+			<% end %>
+
+			<div>
+				<label><span>Titel</span> (darf nicht leer sein)</label>
+			  <%= f.text_field :title, class: "title-field" %>
+			  <label><span>Vorspann</span> (falls gewünscht, sonst leer lassen)</label>
+			  <%= f.text_area :header, class: "header-field" %>
+			  <label><span>Text</span> (darf nicht leer sein)</label>
+			  <%= f.text_area :body, id: "some-textarea", class: "text-field" %>
+			  <%= f.submit button_text, class: 'sign-in' %>
+			</div>
+		<% end %>
+
+	</div>
+</div>
+
+<!-- Javascript Text Editor -->
+<script type="text/javascript">
+	$(document).on('page:load', function(){
+	  window['rangy'].initialized = false
+	})
+	$('#some-textarea').wysihtml5({
+		"font-styles": false, //Font styling, e.g. h1, h2, etc. Default true
+		"emphasis": true, //Italics, bold, etc. Default true
+		"lists": false, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+		"html": false, //Button which allows you to edit the generated HTML. Default false
+		"link": true, //Button to insert a link. Default true
+		"image": false, //Button to insert an image. Default true,
+		"color": false //Button to change color of font  
+	});
+</script>
+
+				

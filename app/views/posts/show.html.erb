@@ -37,7 +37,13 @@
 		<% end %>
 
 		<!-- Sanitize displays correct mark-up -->
-		<p class="text"><%= sanitize @post.body %></p>		
+		<p class="text"><%= sanitize @post.body %></p>	
+
+		<% if current_user == @post.user %>
+			<%= link_to "Beitrag bearbeiten", edit_user_post_path(@post.user, @post), class: "link" %>
+
+			<%= link_to "Beitrag löschen", user_post_path(@post.user, @post), method: :delete, data: { confirm: "Sind Sie sicher, dass Sie diesen Beitrag unwiderruflich löschen möchten?" }, class: "link" %>
+		<% end %>	
 		
 	</div>
 
