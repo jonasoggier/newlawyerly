@@ -9,16 +9,31 @@
 Neuen Beitrag verfassen
 
 <%= form_for [current_user, @post] do |f| %>
+
+	<% if @post.errors.any? %>
+	  <div id="error_explanation" class="alert alert-error">
+	    <h3><%= pluralize(@post.errors.count, "error") %> prohibited this form from being saved:</h3>
+	    <ul>
+	      <% @post.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+
 	<div class="span8 newpost">
-	  <%= f.text_field :title, placeholder: "Geben Sie hier den Titel des Beitrags ein...", class: "input-block-level" %>
-	  <%= f.text_area :body, placeholder: "Geben Sie hier den Text des Beitrags ein...", id: "some-textarea" %>
+		<label>Titel (darf nicht leer sein)</label>
+	  <%= f.text_field :title, class: "input-block-level" %>
+	  <label>Vorspann (falls gewünscht, sonst leer lassen)</label>
+	  <%= f.text_area :header %>
+	  <label>Text des Beitrags (darf nicht leer sein)</label>
+	  <%= f.text_area :body, id: "some-textarea" %>
 	  <%= f.submit 'Beitrag publizieren', class: 'sign-in' %>
 	</div>
 <% end %>
 
 
-
-<!-- Text Editor -->
+<!-- Javascript Text Editor -->
 <script type="text/javascript">
 	$(document).on('page:load', function(){
 	  window['rangy'].initialized = false

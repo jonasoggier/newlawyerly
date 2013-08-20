@@ -14,19 +14,6 @@
   <div class="right-part"> 
 
 	  <%= form_for @user do |f| %>
-
-	    <% unless f.object.errors.empty? %>
-	        <% if @user.errors.any? %>
-	          <div id="error_explanation" class="alert alert-error">
-	            <h3><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</h3>
-	            <ul>
-	              <% @user.errors.full_messages.each do |msg| %>
-	                <li><%= msg %></li>
-	              <% end %>
-	            </ul>
-	          </div>
-	      <% end %>
-	    <% end %>
 	        
 	    <div>
 	      <label>Vorname</label>

@@ -4,9 +4,13 @@
 		<h1>Lawyerly</h1>
 		<h2>Die Plattform für Schweizer Juristen.</h2>
 		<h3>Neues. Juristisches. Menschliches.</h3>
-		<div class="homepage-divider"></div>
-		<a href="#sign-in-form" rel="modal:open"><div class="sign-in">Anmelden</div></a>
-		<p class="sign-up">Neu auf Lawyerly?<br>Registrieren Sie sich <a href="#sign-up-form" rel="modal:open">hier</a>.</p>
+
+		<% unless logged_in? %>
+			<div class="homepage-divider"></div>
+			<a href="#sign-in-form" rel="modal:open"><div class="sign-in">Anmelden</div></a>
+			<p class="sign-up">Neu auf Lawyerly?<br>Registrieren Sie sich <a href="#sign-up-form" rel="modal:open">hier</a>.</p>
+		<% end %>
+		
 	</div>
 </div>
 

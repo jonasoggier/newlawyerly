@@ -15,8 +15,8 @@ class PostsController < ApplicationController
   	if @post.save
   		redirect_to [current_user, @post], notice: "Gratulation! Beitrag erfolgreich erstellt."
   	else
-  		render 'users/show', alert: "Ein unerwartetes Problem ist aufgetreten. Bitte versuchen Sie es erneut."
-  	end
+      render :new  
+    end
   end
 
 

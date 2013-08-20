@@ -32,6 +32,10 @@
 
 		<p class="comments"><%= pluralize(@post.comments.count, 'comment') %></p>
 	
+		<% if @post.header %>
+			<p class="text header"><%= @post.header %></p>
+		<% end %>
+
 		<!-- Sanitize displays correct mark-up -->
 		<p class="text"><%= sanitize @post.body %></p>		
 		
