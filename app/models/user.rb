@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   validates_length_of :password, :minimum => 5, :flash => "Password must be at least 5 characters long", :if => :password
   validates :email, :presence => true, :uniqueness => true
+  validates :first_name, :last_name, :presence => true
 
   include PgSearch
   multisearchable :against => [:first_name, :last_name]
