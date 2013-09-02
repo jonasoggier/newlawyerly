@@ -18,7 +18,7 @@
 			<p class="company"><%= @user.company %></p>
 		<% end %>
 		
-		<% if current_user == @user && (@user.teaser.empty? || @user.teaser == nil) %>
+		<% if current_user == @user && (@user.teaser.blank? || @user.teaser == nil) %>
 			<p class="teaser">Hier können Sie eine kurze Beschreibung über sich selbst verfassen. Zum Bearbeiten <%= link_to "hier", edit_user_path(@user), class: "edit-link" %> klicken.</p>
 		<% else %>
 			<p class="teaser"><%= @user.teaser %></p>
