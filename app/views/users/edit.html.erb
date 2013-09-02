@@ -1,5 +1,67 @@
-<div class="edit-user posts-container">
-	<h1>Edit your profile</h1>
+<div class="user-edit-area">
 
-	<%= render 'edituser' %>
+	<%= link_to(user_path(@user), method: :delete, data: { confirm: "Sind Sie sicher, dass Sie dieses Benutzerkonto unwiderruflich löschen möchten? Bitte beachten Sie, dass mit dieser Aktion auch alle damit zusammenhängenden Beiträge und sonstigen Informationen gelöscht werden." }) do %>
+	  <div class="arrow-box arrow-user-edit">Benutzerkonto löschen</div>
+	<% end %>
+
+	<div class="user-edit">
+		
+		<h3>Benutzerprofil anpassen</h3>
+
+		<% if @user.company_account %>
+			Dies ist das Unternehmenskonto für <%= @user.company %>.
+		<% end %>
+		
+		<%= form_for @user do |f| %>
+
+		  <% unless f.object.errors.empty? %>
+		      <% if @user.errors.any? %>
+		        <div id="error_explanation" class="alert alert-error">
+		          <h3><%= pluralize(@user.errors.count, "error") %> prohibited this form from being saved:</h3>
+		          <ul>
+		            <% @user.errors.full_messages.each do |msg| %>
+		              <li><%= msg %></li>
+		            <% end %>
+		          </ul>
+		        </div>
+		    <% end %>
+		  <% end %>
+		      
+		  <div class="left-part">
+		    <label><span>Vorname</span> (darf nicht leer sein)</label>
+		    <%= f.text_field :first_name %>
+		    
+		   	<label><span>Nachname</span> (darf nicht leer sein)</label>
+		    <%= f.text_field :last_name %>
+
+		   	<label><span>Unternehmen</span> (Arbeitsort, Berufsorganisation etc.)</label>
+		    <%= f.text_field :company %>
+
+		    <label><span>Kurze Beschreibung</span></label>
+		    <%= f.text_area :teaser, rows: "4" %>
+		   </div>
+
+			<div class="right-part">
+		    <label><span>Email-Adresse</span> (darf nicht leer sein)</label>
+		    <%= f.email_field :email %><br>
+		    <%= f.radio_button(:show_email, true) %><div class="email-radio-button">Aktivieren, falls Sie Ihre Email-Adresse auf der Profilseite anzeigen wollen.</div>
+
+		    <label><span>Homepage</span> (z.B. von Arbeitgeber)</label>
+		    <%= f.email_field :homepage %>
+
+		    <div class="upload-background">
+			    <label><span>Benutzerfoto auswählen</span> (Wird verwendet für kleines rundes Benutzerfoto)</label>
+			    <%= f.file_field :profile_picture %>
+
+			    <label><span>Hintergrundfoto auswählen</span> (Wird verwendet für Hintergrund auf Profilseite)</label>
+			    <%= f.file_field :background_picture %>
+		    </div>
+
+				<label><span>Wichtiger Hinweis:</span> Übermittlung der Daten kann eine gewisse Zeit in Anspruch nehmen. Bitte einfach warten und nicht auf "zurück" klicken.</label>
+		    <%= f.submit 'Profil anpassen', class: 'sign-in user-edit-button' %>
+		  </div>
+
+		<% end %>
+
+	</div>
 </div>

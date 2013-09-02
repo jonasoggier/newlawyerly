@@ -17,34 +17,23 @@ class UsersController < ApplicationController
     end
   end
 
-
-
-
-  # To be amended for NewLawyerly!!
-
   def edit
-    if current_user == User.find(params[:id]) # TBD if this is sufficient protection!
-      @user = User.find(params[:id])   
-    end
+    @user = User.find(params[:id])   
   end
 
   def update  
-    if current_user == User.find(params[:id]) # TBD if this is sufficient protection!
-      @user = User.find(params[:id]) 
-      if @user.update_attributes(params[:user])  
-        redirect_to @user, notice: "Profile successfully updated." 
-      else
-        # do something else TODO
-      end
+    @user = User.find(params[:id]) 
+    if @user.update_attributes(params[:user])  
+      redirect_to @user, notice: "Benutzerprofil erfolgreich angepasst." 
+    else
+      render "edit", alert: "Es gab ein Problem mit der Anpassung. Bitte versuchen Sie es erneut." 
     end
   end
 
   def destroy
-    if current_user == User.find(params[:id]) # TBD if this is sufficient protection!
-      @user = User.find(params[:id])
-      @user.destroy
-      redirect_to root_path, alert: "Profile successfully deleted." 
-    end
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path, alert: "Profil erfolgreich gelöscht." 
   end
  
 end

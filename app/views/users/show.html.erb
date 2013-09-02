@@ -6,6 +6,12 @@
 
 		<%= image_tag @user.profile_picture_url.to_s, :class => "user-picture" %>
 
+		<% if current_user == @user %>
+			<%= link_to(edit_user_path(@user)) do %>
+			  <div class="arrow-box">Profil bearbeiten</div>
+			<% end %>
+		<% end %>
+
 	</div>	
 
 
@@ -21,6 +27,7 @@
 		<div class="author-divider"></div>
 			
 		<p class="email"><%= @user.email %></p>
+		<p class="email"><%= @user.homepage %></p>
 	</div>	
 
 </div>
