@@ -18,16 +18,24 @@
 	<div class="user-info">
 		<p class="name"><%= user_name(@user) %></p>
 		
-		<% if current_user == @user && @user.teaser == nil %>
-			<p class="teaser">Hier können Sie eine kurze Beschreibung über sich selbst verfassen. Zum Bearbeiten hier klicken.</p>
+		<% if current_user == @user && (@user.teaser.empty? || @user.teaser == nil) %>
+			<p class="teaser">Hier können Sie eine kurze Beschreibung über sich selbst verfassen. Zum Bearbeiten <%= link_to "hier", edit_user_path(@user), class: "edit-link" %> klicken.</p>
 		<% else %>
 			<p class="teaser"><%= @user.teaser %></p>
 		<% end %>
 
-		<div class="author-divider"></div>
-			
-		<p class="email"><%= @user.email %></p>
-		<p class="email"><%= @user.homepage %></p>
+		<% if @user.show_email || @user.homepage.blank? == false %>
+			<div class="author-divider"></div>
+		<% end %>
+
+		<% if @user.show_email %>
+			<%= mail_to @user.email, @user.email, class: "email" %><br>
+		<% end %>
+
+		<% unless @user.homepage.blank? %>
+			<%= link_to @user.homepage, homepage_with_protocol(@user.homepage), :target => '_blank', class: "email" %>
+		<% end %>
+
 	</div>	
 
 </div>

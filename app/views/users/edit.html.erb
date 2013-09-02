@@ -37,17 +37,17 @@
 		   	<label><span>Unternehmen</span> (Arbeitsort, Berufsorganisation etc.)</label>
 		    <%= f.text_field :company %>
 
-		    <label><span>Kurze Beschreibung</span></label>
-		    <%= f.text_area :teaser, rows: "4" %>
+		    <label><span>Kurze Beschreibung</span> (max. 140 Zeichen)</label>
+		    <%= f.text_area :teaser, rows: "5" %>
 		   </div>
 
 			<div class="right-part">
 		    <label><span>Email-Adresse</span> (darf nicht leer sein)</label>
 		    <%= f.email_field :email %><br>
-		    <%= f.radio_button(:show_email, true) %><div class="email-radio-button">Aktivieren, falls Sie Ihre Email-Adresse auf der Profilseite anzeigen wollen.</div>
+		    <%= f.check_box :show_email %><div class="email-radio-button">Aktivieren, falls Sie Ihre Email-Adresse auf der Profilseite anzeigen wollen.</div>
 
 		    <label><span>Homepage</span> (z.B. von Arbeitgeber)</label>
-		    <%= f.email_field :homepage %>
+		    http://<%= f.text_field :homepage %>
 
 		    <div class="upload-background">
 			    <label><span>Benutzerfoto auswählen</span> (Wird verwendet für kleines rundes Benutzerfoto)</label>

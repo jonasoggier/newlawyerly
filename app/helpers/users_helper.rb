@@ -16,4 +16,8 @@ module UsersHelper
 		end
 	end
 
+	def homepage_with_protocol(homepage)
+    	/^http/.match(homepage) ? homepage : "http://#{homepage}"
+  	end
+
 end

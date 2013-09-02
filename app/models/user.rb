@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   authenticates_with_sorcery!
 
-  attr_accessible :first_name, :last_name, :company, :email, :homepage, :teaser, :company_account, :password, :password_confirmation, :profile_picture, :background_picture, :email_show
+  attr_accessible :first_name, :last_name, :company, :email, :homepage, :teaser, :company_account, :password, :password_confirmation, :profile_picture, :background_picture, :show_email
 
   has_many :posts, :dependent => :destroy
   has_many :comments, :dependent => :destroy
@@ -15,9 +15,11 @@ class User < ActiveRecord::Base
 
   mount_uploader :profile_picture, ProfilePictureUploader
 
-  validates_length_of :password, :minimum => 5, :flash => "Password must be at least 5 characters long", :if => :password
+  validates_length_of :password, :minimum => 5, :flash => "Password must be at least 5 characters long.", :if => :password
   validates :email, :presence => true, :uniqueness => true
   validates :first_name, :last_name, :presence => true
+  validates_length_of :teaser, :maximum => 140, :flash => "Teaser cannot be longer than 140 characters."
+
 
   include PgSearch
   multisearchable :against => [:first_name, :last_name]

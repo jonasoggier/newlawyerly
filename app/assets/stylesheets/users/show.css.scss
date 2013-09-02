@@ -73,24 +73,37 @@
 .user-info {
 	margin-top: 20px;
 	text-align: center;
+	font-size: 13px;
+
 	.name {
 		padding-bottom: 10px;
 		font-size: 24px;
 		font-weight: bold;
 	}
+
 	.teaser {
-		font-size: 16px;
+		line-height: 18px;
 		color: rgba(128, 128, 128, 0.77);
+		font-style: italic;
+		margin-left: 15%;
+		margin-right: 15%;
 	}
-	.author-divider {
-		border-bottom: 1px solid rgb(222, 222, 220);
-		width: 150px;
-		margin: 20px auto;
-	}
-	.email {
+
+	.edit-link {
+		border-bottom: 1px dotted;
 		color: rgba(128, 128, 128, 0.77);
 	}
 
+	.author-divider {
+		border-bottom: 1px solid rgb(222, 222, 220);
+		width: 150px;
+		margin: 12px auto;
+	}
+
+	.email {
+		color: rgba(128, 128, 128, 0.77);
+		margin-bottom: 20px;
+	}
 }
 
 .no-posts-message {
