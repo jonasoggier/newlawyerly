@@ -14,12 +14,12 @@ class User < ActiveRecord::Base
   has_many :inverse_followed_users, :through => :inverse_relationships, :source => :user
 
   mount_uploader :profile_picture, ProfilePictureUploader
+  mount_uploader :background_picture, BackgroundUploader
 
   validates_length_of :password, :minimum => 5, :flash => "Password must be at least 5 characters long.", :if => :password
   validates :email, :presence => true, :uniqueness => true
   validates :first_name, :last_name, :presence => true
   validates_length_of :teaser, :maximum => 140, :flash => "Teaser cannot be longer than 140 characters."
-
 
   include PgSearch
   multisearchable :against => [:first_name, :last_name]
