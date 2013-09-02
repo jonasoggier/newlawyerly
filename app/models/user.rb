@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   authenticates_with_sorcery!
 
-  attr_accessible :first_name, :last_name, :email, :teaser, :description, :password, :password_confirmation, :profile_picture
+  attr_accessible :first_name, :last_name, :company, :email, :homepage, :teaser, :company_account, :password, :password_confirmation, :profile_picture, :background_picture
 
   has_many :posts, :dependent => :destroy
   has_many :comments, :dependent => :destroy
