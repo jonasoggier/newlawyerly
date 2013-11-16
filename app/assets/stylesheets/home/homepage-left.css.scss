@@ -18,7 +18,8 @@
 	.overview-container {
 		position: absolute;	
 		left: 8%;
-		bottom: 5%;
+		bottom: 6%;
+		margin-left: 0;
 	}
 
 	h1 {
@@ -41,11 +42,34 @@
 		opacity: 0.5;
 	}
 
-	.sign-up {
+	.sign-up, .editor-info {
 		margin-top: -37px;
 		margin-left: 160px;
 		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
 		font-size: 13px;
+		a {
+			color: white;
+			text-decoration: none;
+			border-bottom: 1px dotted white;
+		}
+	}
+
+	.editor-info {
+		margin-top: 30px;
+		margin-left: 0;
+	}
+
+	.info-bar {
+		font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
+		font-size: 12px;
+		list-style: none;
+		position: absolute;	
+		bottom: 1%;
+		left: 0%;
+		li {
+			display: inline;
+			padding: 5px;
+		}
 		a {
 			color: white;
 			text-decoration: none;

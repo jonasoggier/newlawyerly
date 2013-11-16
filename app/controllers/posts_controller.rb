@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @nextpost = @post.previous
   end
 
   def new
@@ -11,7 +12,10 @@ class PostsController < ApplicationController
   end
  
 	def create
-  	@post = current_user.posts.build(params[:post])
+    if current_user.company_account
+  	 @post = current_user.posts.build(params[:post])
+    end
+    
   	if @post.save
   		redirect_to [current_user, @post], notice: "Gratulation! Beitrag erfolgreich erstellt."
   	else
@@ -24,7 +28,10 @@ class PostsController < ApplicationController
   end
 
   def update  
-      @post = current_user.posts.find(params[:id])
+      if current_user.company_account
+        @post = current_user.posts.find(params[:id])
+      end
+
       if @post.update_attributes(params[:post])  
         redirect_to [current_user, @post], notice: "Beitrag erfolgreich angepasst." 
       else

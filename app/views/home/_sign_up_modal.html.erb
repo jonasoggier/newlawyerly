@@ -5,7 +5,7 @@
   <div class="left-part">Warum Sie Lawyerly <span>lieben</span> werden:
   	<ul>
   		<li>Sie erhalten Zugriff auf alle Funktionen</li>
-  		<li>Sie können selbst Beiträge verfassen</li>
+  		<li>Sie können Artikel archivieren</li>
   		<li>Sie erhalten Zugang zu exklusiven Aktionen und Veranstaltungen</li>
   		<li class="bold">Garantiert kostenlos</li>
   	</ul>
@@ -22,8 +22,6 @@
 	      <%= f.text_field :last_name, class: "input-block-level" %>
 	      <label>Kanzlei/Unternehmen/Institution</label>
 	      <%= f.text_field :company, class: "input-block-level" %>
-	      <br><%= f.radio_button(:company_account, true) %>
-		  <%= f.label(:company_account, "Unternehmenskonto") %><span>(Hier anklicken falls dies ein Benutzerkonto für das genannte Unternehmen werden soll. Nicht anklicken für Benutzerkonto als Privatperson.)</span>
 	      <label>Email</label>
 	      <%= f.email_field :email, class: "input-block-level" %>
 	      <br><span>Ihre Email-Adresse ist bei uns sicher. Garantiert kein Spam.</span>

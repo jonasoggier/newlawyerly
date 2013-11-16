@@ -47,6 +47,25 @@
 
 </div>
 
+<div class="next-article-container">
+
+	<p>Nächsten Beitrag lesen</p>
+
+	<p class=""><%= link_to @nextpost.title, user_post_path(@nextpost.user, @nextpost) %></p>
+
+	<%= link_to (image_tag @nextpost.user.profile_picture_url(:thumb).to_s, :class => "profile-picture"), @nextpost.user %>
+	
+	<p class="" id="clearfix"><span><%= link_to name(@nextpost), @nextpost.user %></span></p>
+	
+	<% if @nextpost.header %>
+		<p class=""><%= link_to @nextpost.header.truncate(270, :separator => ' ', :omission =>'...'), user_post_path(@nextpost.user, @nextpost) %></p>		
+	<% else %>
+		<!-- strip_tags takes out all html tags inserted by JS editor -->
+		<p class=""><%= link_to strip_tags(@nextpost.body.truncate(270, :separator => ' ', :omission =>'...')), user_post_path(@nextpost.user, @nextpost) %></p>	
+	<% end %>
+
+</div>
+
 
 
 
