@@ -29,8 +29,6 @@
 	<div class="text-area">
 
 		<p class="title"><%= @post.title %></p>
-
-		<p class="comments"><%= pluralize(@post.comments.count, 'comment') %></p>
 	
 		<% if @post.header %>
 			<p class="text header"><%= @post.header %></p>

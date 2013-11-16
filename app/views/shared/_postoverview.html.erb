@@ -8,9 +8,9 @@
 	</div>
 	
 	<% if controller_name == "home" %>
-		<p class="subline" id="clearfix"><span><%= link_to name(post), post.user %></span> hat dies vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert · <%= pluralize(post.comments.count, 'comment') %></p>
+		<p class="subline" id="clearfix"><span><%= link_to name(post), post.user %></span> hat dies vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert</p>
 	<% else %>
-		<p class="subline" id="clearfix">Vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert · <%= pluralize(post.comments.count, 'comment') %></p>
+		<p class="subline" id="clearfix">Vor <%= distance_of_time_in_words(Time.now, post.created_at, include_seconds = false) %> publiziert</p>
 	<% end %>
 	
 	<% if post.header %>
